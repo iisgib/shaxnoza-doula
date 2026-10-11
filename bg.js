@@ -58,7 +58,7 @@
 
   function resize() {
     dpr = Math.min(window.devicePixelRatio || 1, 2);
-    w = window.innerWidth; h = window.innerHeight;
+    w = document.documentElement.clientWidth; h = window.innerHeight;
     canvas.width = w * dpr; canvas.height = h * dpr;
     canvas.style.width = w + "px"; canvas.style.height = h + "px";
     const count = Math.round(Math.min(34, Math.max(12, (w * h) / 42000)));
