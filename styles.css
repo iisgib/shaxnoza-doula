@@ -345,7 +345,10 @@ h1, h2, h3, h4 { margin: 0; font-weight: 400; }
 /* ---------- Philosophy ---------- */
 .philosophy { background: var(--olive); color: var(--milk); padding: var(--section) 0; }
 .philosophy .h2 { max-width: 16ch; }
-.rights { columns: 3; column-gap: 48px; margin: clamp(40px, 5vw, 72px) 0; }
+.philosophy__grid { display: grid; grid-template-columns: 1.25fr .85fr; gap: clamp(40px, 6vw, 96px); align-items: center; }
+.philosophy__photo { margin: 0; }
+.philosophy__photo img { width: 100%; height: auto; aspect-ratio: 1009 / 1558; object-fit: cover; }
+.rights { columns: 2; column-gap: 40px; margin: clamp(40px, 5vw, 72px) 0 0; }
 .rights li {
   break-inside: avoid;
   font-family: var(--serif); font-size: clamp(22px, 2.2vw, 28px); line-height: 1.3;
@@ -422,7 +425,8 @@ h1, h2, h3, h4 { margin: 0; font-weight: 400; }
   .stat:nth-child(2) { border: 0; margin-right: 0; }
   .steps { grid-template-columns: 1fr 1fr; }
   .reviews { grid-template-columns: 1fr; }
-  .rights { columns: 2; }
+  .philosophy__grid { grid-template-columns: 1fr; }
+  .philosophy__photo { max-width: 460px; }
 }
 @media (max-width: 600px) {
   body { font-size: 16px; }
