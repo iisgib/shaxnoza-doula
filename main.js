@@ -8,39 +8,54 @@ const CONTACTS = {
 };
 
 /* ================= DIPLOMAS =================
-   Add files to assets/certs/ and list them here. `img` empty = placeholder frame.
-   title/meta can be a string or { ru, uz, en }. */
-const CERTS = {
-  birth: [
-    { title: { ru: "Сертификат родовой доулы", uz: "Tug‘ruq doulasi sertifikati", en: "Birth Doula Certificate" }, meta: "—", img: "" },
-    { title: { ru: "Обучение родовой доулы", uz: "Tug‘ruq doulasi kursi", en: "Birth Doula Training" }, meta: "—", img: "" }
-  ],
-  postpartum: [
-    { title: { ru: "Сертификат послеродовой доулы", uz: "Tug‘ruqdan keyingi doula sertifikati", en: "Postpartum Doula Certificate" }, meta: "—", img: "" }
-  ],
-  continuing: [
-    { title: { ru: "Повышение квалификации", uz: "Malaka oshirish", en: "Continuing Education" }, meta: "—", img: "" },
-    { title: { ru: "Повышение квалификации", uz: "Malaka oshirish", en: "Continuing Education" }, meta: "—", img: "" },
-    { title: { ru: "Повышение квалификации", uz: "Malaka oshirish", en: "Continuing Education" }, meta: "—", img: "" }
-  ],
-  conferences: [
-    { title: { ru: "Международная конференция", uz: "Xalqaro konferensiya", en: "International Conference" }, meta: "—", img: "" }
-  ]
+   Files live in assets/certs/. `img` = full-size image opened on click,
+   `thumb` = card preview (can differ, e.g. a cover photo). title/meta: string or { ru, uz, en }. */
+const C = "assets/certs/";
+const CONF_PAIN = {
+  title: "Childbirth: From Pain to Power",
+  meta: { ru: "Doula Link • 6–9 февраля 2026 • 25 CPD-часов", uz: "Doula Link • 2026-yil 6–9 fevral • 25 CPD soat", en: "Doula Link • 6–9 February 2026 • 25 CPD hours" },
+  img: C + "conf-pain-to-power-2026.jpg", thumb: C + "conf-pain-to-power-2026-thumb.jpg"
+};
+const CONF_MAPS = {
+  title: "Maps and Territory of Childbirth and Motherhood",
+  meta: { ru: "Doula Link • 4–7 сентября 2026 • 20 CPD-часов", uz: "Doula Link • 2026-yil 4–7 sentyabr • 20 CPD soat", en: "Doula Link • 4–7 September 2026 • 20 CPD hours" },
+  img: C + "conf-maps-territory-2026.jpg", thumb: C + "conf-maps-territory-2026-thumb.jpg"
 };
 
-/* ================= CONFERENCES =================
-   { title, place: "Country • Year", img } — empty strings show placeholders. */
-const CONFERENCES = [
-  { title: "", place: "", img: "" },
-  { title: "", place: "", img: "" },
-  { title: "", place: "", img: "" }
-];
+const CERTS = {
+  higher: [
+    {
+      title: { ru: "Диплом магистра", uz: "Magistr diplomi", en: "Master’s Degree Diploma" },
+      meta: { ru: "Узбекистан", uz: "O‘zbekiston", en: "Uzbekistan" },
+      img: C + "masters-diploma.jpg", thumb: C + "masters-diploma-thumb.jpg"
+    }
+  ],
+  birth: [
+    {
+      title: { ru: "«Профессиональная доула — помощница в родах»", uz: "«Professional doula — tug‘ruqda yordamchi»", en: "“Professional Doula — Birth Assistant”" },
+      meta: { ru: "Doula+ • Сертификат • Май 2024", uz: "Doula+ • Sertifikat • 2024-yil may", en: "Doula+ • Certificate • May 2024" },
+      img: C + "birth-doula-plus-2024.jpg", thumb: C + "birth-doula-plus-2024-thumb.jpg"
+    },
+    {
+      title: { ru: "Диплом «Professional doula»", uz: "«Professional doula» diplomi", en: "Diploma “Professional Doula”" },
+      meta: { ru: "Open European Academy of Economics & Politics, Прага • 2024", uz: "Open European Academy of Economics & Politics, Praga • 2024", en: "Open European Academy of Economics & Politics, Prague • 2024" },
+      img: C + "birth-oeaep-diploma-2024.jpg", thumb: C + "birth-oeaep-cover-thumb.jpg"
+    }
+  ],
+  postpartum: [
+    {
+      title: { ru: "Postpartum Doula — послеродовая доула", uz: "Postpartum Doula — tug‘ruqdan keyingi doula", en: "Postpartum Doula Certification" },
+      meta: { ru: "Doula Link / Институт перинатальной поддержки • Сентябрь 2026", uz: "Doula Link / Perinatal qo‘llab-quvvatlash instituti • 2026-yil sentyabr", en: "Doula Link / Institute for Perinatal Support • September 2026" },
+      img: C + "postpartum-doulalink-2026.jpg", thumb: C + "postpartum-doulalink-2026-thumb.jpg"
+    }
+  ],
+  conferences: [CONF_PAIN, CONF_MAPS]
+};
 
 /* ============================================ */
 
 const LANGS = ["uz", "ru", "en"];
 let lang = "ru";
-let activeCat = "birth";
 
 const t = (key) => (I18N[lang] && I18N[lang][key]) ?? I18N.ru[key] ?? "";
 const pick = (v) => (v && typeof v === "object") ? (v[lang] || v.ru || "") : (v || "");
@@ -64,33 +79,22 @@ function setLang(next) {
   document.querySelectorAll(".lang button").forEach((b) => b.classList.toggle("is-active", b.dataset.lang === lang));
   try { localStorage.setItem("lang", lang); } catch (e) {}
   renderCerts();
-  renderConferences();
+  renderReviews();
+  if (svcDialog.open) renderService(currentSvc);
 }
 
+/* Certificates: each `.certs[data-cat]` block on the page shows CERTS[cat] */
 function renderCerts() {
-  const box = document.getElementById("certs");
-  const items = CERTS[activeCat] || [];
-  box.innerHTML = items.map((c, i) => `
-    <button class="cert" data-i="${i}">
-      <span class="cert__img ${c.img ? "" : "ph"}">
-        ${c.img ? `<img src="${esc(c.img)}" alt="${esc(pick(c.title))}" loading="lazy">` : `<span class="ph__label">${esc(t("edu.soon"))}</span>`}
-      </span>
-      <span class="cert__title">${esc(pick(c.title))}</span>
-      <span class="cert__meta">${esc(pick(c.meta))}</span>
-    </button>`).join("");
-}
-
-function renderConferences() {
-  document.getElementById("conferences").innerHTML = CONFERENCES.map((c) => `
-    <div class="conf reveal is-in">
-      <div class="conf__img ${c.img ? "" : "ph"}">
-        ${c.img ? `<img src="${esc(c.img)}" alt="" loading="lazy">` : `<span class="ph__label">${esc(t("intl.phImg"))}</span>`}
-      </div>
-      <div>
-        <p class="conf__title">${esc(pick(c.title) || t("intl.phTitle"))}</p>
-        <p class="conf__meta">${esc(pick(c.place) || t("intl.phMeta"))}</p>
-      </div>
-    </div>`).join("");
+  document.querySelectorAll(".certs[data-cat]").forEach((box) => {
+    box.innerHTML = (CERTS[box.dataset.cat] || []).map((c, i) => `
+      <button class="cert" data-i="${i}">
+        <span class="cert__img ${c.img ? "" : "ph"}">
+          ${c.img ? `<img src="${esc(c.thumb || c.img)}" alt="${esc(pick(c.title))}" loading="lazy">` : `<span class="ph__label">${esc(t("edu.soon"))}</span>`}
+        </span>
+        <span class="cert__title">${esc(pick(c.title))}</span>
+        <span class="cert__meta">${esc(pick(c.meta))}</span>
+      </button>`).join("");
+  });
 }
 
 /* Lightbox */
@@ -102,21 +106,57 @@ function openCert(c) {
     : `<div class="ph"><span class="ph__label">${esc(t("edu.soon"))}</span></div><p>${esc(pick(c.title))}</p>`;
   lightbox.showModal();
 }
-document.getElementById("certs").addEventListener("click", (e) => {
+document.querySelectorAll(".certs[data-cat]").forEach((box) => box.addEventListener("click", (e) => {
   const btn = e.target.closest(".cert");
-  if (btn) openCert(CERTS[activeCat][+btn.dataset.i]);
-});
+  if (btn) openCert(CERTS[box.dataset.cat][+btn.dataset.i]);
+}));
 lightbox.addEventListener("click", (e) => {
   if (e.target === lightbox || e.target.closest(".lightbox__close")) lightbox.close();
 });
 
-/* Education tabs */
-document.getElementById("eduTabs").addEventListener("click", (e) => {
-  const b = e.target.closest("button[data-cat]");
-  if (!b) return;
-  activeCat = b.dataset.cat;
-  document.querySelectorAll("#eduTabs button").forEach((x) => x.classList.toggle("is-active", x === b));
-  renderCerts();
+/* Service details dialog */
+const svcDialog = document.getElementById("svcDialog");
+const svcContent = document.getElementById("svcContent");
+let currentSvc = 1;
+function renderService(n) {
+  svcContent.innerHTML = `
+    <p class="svc-dialog__n">0${n}</p>
+    <h3 class="h3">${t(`sv${n}.t`)}</h3>
+    <div class="svc-dialog__text">${t(`sv${n}.d`)}</div>
+    <a class="btn btn--accent" href="${contactUrl("telegram")}" target="_blank" rel="noopener">${t(`sv${n}.cta`)} →</a>`;
+}
+document.querySelectorAll(".svc").forEach((b) => b.addEventListener("click", () => {
+  currentSvc = +b.dataset.svc;
+  renderService(currentSvc);
+  svcDialog.showModal();
+}));
+svcDialog.addEventListener("click", (e) => {
+  if (e.target === svcDialog || e.target.closest(".svc-dialog__close")) svcDialog.close();
+});
+
+/* Reviews: short excerpt on the card, full text in a dialog */
+const reviewDialog = document.getElementById("reviewDialog");
+const reviewContent = document.getElementById("reviewContent");
+const paragraphs = (text) => text.split("\n").map((l) => l.trim()).filter(Boolean)
+  .map((l) => l === "—" ? "<hr>" : `<p>${esc(l)}</p>`).join("");
+function renderReviews() {
+  document.getElementById("reviewsList").innerHTML = REVIEWS.map((r, i) => `
+    <button class="review" data-i="${i}">
+      <span class="review__quote">${esc(r.quote)}</span>
+      <span class="review__name">${esc(r.name)}</span>
+      <span class="review__more">${t("rev.more")} +</span>
+    </button>`).join("");
+}
+document.getElementById("reviewsList").addEventListener("click", (e) => {
+  const btn = e.target.closest(".review");
+  if (!btn) return;
+  const r = REVIEWS[+btn.dataset.i];
+  reviewContent.innerHTML = `<h3 class="h3">${esc(r.name)}</h3><div class="review-dialog__text">${paragraphs(r.text)}</div>`;
+  reviewDialog.showModal();
+  reviewDialog.scrollTop = 0;
+});
+reviewDialog.addEventListener("click", (e) => {
+  if (e.target === reviewDialog || e.target.closest(".svc-dialog__close")) reviewDialog.close();
 });
 
 /* Language switch */
@@ -135,15 +175,6 @@ onScroll();
 /* Contact links */
 document.querySelectorAll("[data-contact]").forEach((a) => { a.href = contactUrl(a.dataset.contact); });
 
-/* Reveal on scroll */
-if ("IntersectionObserver" in window) {
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach((en) => { if (en.isIntersecting) { en.target.classList.add("is-in"); io.unobserve(en.target); } });
-  }, { threshold: 0.12 });
-  document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
-} else {
-  document.querySelectorAll(".reveal").forEach((el) => el.classList.add("is-in"));
-}
 
 document.getElementById("year").textContent = new Date().getFullYear();
 
