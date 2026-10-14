@@ -161,7 +161,7 @@ h1, h2, h3, h4 { margin: 0; font-weight: 400; }
   letter-spacing: -.02em;
   margin-bottom: .35em;
 }
-.hero__name em { font-style: italic; color: var(--olive); }
+.hero__name em { font-style: normal; color: inherit; }
 .hero__role {
   font-size: 13px; letter-spacing: .2em; text-transform: uppercase;
   border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);
