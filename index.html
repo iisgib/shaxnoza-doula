@@ -9,7 +9,7 @@
   <meta property="og:image" content="assets/shakhnoza.jpg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -80,6 +80,7 @@
   <div class="container about">
     <figure class="about__photo">
       <img src="assets/shakhnoza.jpg" alt="Shakhnoza Akhmedova" width="640" height="640">
+      <figcaption class="handnote" data-i18n="about.note"></figcaption>
     </figure>
     <div class="about__body">
       <p class="label" data-i18n="about.label"></p>
@@ -236,15 +237,6 @@
     <div class="reviews" id="reviewsList"><!-- filled from reviews.js --></div>
     <p class="hint" data-i18n="rev.langNote"></p>
 
-    <div class="videos">
-      <p class="eyebrow" data-i18n="rev.video"></p>
-      <div class="videos__row">
-        <!-- TODO: вставить видеоотзывы (mp4 или ссылки на Reels) -->
-        <a class="video ph" href="https://www.instagram.com/shaxnoz_rashidovna_doula/" target="_blank" rel="noopener"><span class="play" aria-hidden="true"></span></a>
-        <a class="video ph" href="https://www.instagram.com/shaxnoz_rashidovna_doula/" target="_blank" rel="noopener"><span class="play" aria-hidden="true"></span></a>
-        <a class="video ph" href="https://www.instagram.com/shaxnoz_rashidovna_doula/" target="_blank" rel="noopener"><span class="play" aria-hidden="true"></span></a>
-      </div>
-    </div>
     <a href="https://www.instagram.com/shaxnoz_rashidovna_doula/" target="_blank" rel="noopener" class="link-arrow" data-i18n="rev.btn"></a>
   </div>
 </section>
@@ -289,8 +281,7 @@
       <p class="personal__big" data-i18n="me.roles"></p>
       <p data-i18n="me.p1"></p>
       <p data-i18n="me.p2"></p>
-      <p data-i18n="me.p3"></p>
-      <p class="lead" data-i18n="me.p4"></p>
+      <p class="lead" data-i18n="me.p3"></p>
     </div>
   </div>
 </section>
@@ -302,10 +293,10 @@
     <h2 class="h2 h2--huge" data-i18n="ct.title"></h2>
     <p class="lead" data-i18n="ct.p1"></p>
     <p data-i18n="ct.p2"></p>
+    <p data-i18n="ct.p3"></p>
+    <p class="contact__promise" data-i18n="ct.p4"></p>
     <a href="#" class="btn btn--accent btn--large" data-contact="telegram" target="_blank" rel="noopener" data-i18n="ct.btn"></a>
     <div class="socials">
-      <a href="#" data-contact="whatsapp" target="_blank" rel="noopener">WhatsApp</a>
-      <span>•</span>
       <a href="#" data-contact="telegram" target="_blank" rel="noopener">Telegram</a>
       <span>•</span>
       <a href="#" data-contact="instagram" target="_blank" rel="noopener">Instagram</a>
@@ -321,9 +312,9 @@
       <p class="footer__name" data-i18n="footer.name"></p>
       <p data-i18n="hero.eyebrow"></p>
       <p data-i18n="hero.role"></p>
+      <p data-i18n="footer.city"></p>
     </div>
     <div class="footer__right">
-      <p data-i18n="footer.city"></p>
       <a href="#" data-contact="instagram" target="_blank" rel="noopener">@shaxnoz_rashidovna_doula</a>
       <p class="footer__copy">© <span id="year"></span></p>
     </div>

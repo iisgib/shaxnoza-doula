@@ -2,6 +2,9 @@
    Keys map to data-i18n attributes in index.html. Values may contain inline HTML. */
 const I18N = {
   ru: {
+    "about.note": "Для меня комфорт, безопасность и конфиденциальность женщины превыше всего!",
+    "ct.p3": "Мы познакомимся, поговорим о том, что важно именно вам, и поймём, подходим ли мы друг другу.",
+    "ct.p4": "Без обязательств. Без давления. С простого знакомства.",
     "rev.more": "Читать отзыв полностью",
     "rev.langNote": "",
     "edu.b1.t": "Высшее образование",
@@ -99,7 +102,6 @@ const I18N = {
 
     "rev.label": "Отзывы",
     "rev.title": "Слова женщин, которым я была <em>рядом</em>",
-    "rev.video": "Видеоотзывы",
     "rev.btn": "Все истории и отзывы",
 
     "courses.label": "Курсы • Встречи • Проекты",
@@ -126,23 +128,25 @@ const I18N = {
     "ph.e1": "Я не хочу решать за женщину,<br>как ей «правильно».",
     "ph.e2": "Я хочу помочь ей услышать<br>собственный голос.",
 
-    "me.label": "И немного обо мне",
+    "me.label": "Немного обо мне",
     "me.title": "Я — больше, чем моя профессия.",
     "me.roles": "Я мама. Жена. Женщина.",
-    "me.p1": "Я люблю путешествовать, читать, учиться, знакомиться с другими культурами и постоянно расширять свой взгляд на мир.",
-    "me.p2": "Мне интересны материнство, отношения, женская идентичность, личные границы и то, как мы меняемся на разных этапах жизни.",
-    "me.p3": "Я сама продолжаю исследовать себя, учиться, ошибаться, меняться и иногда — учиться просто жить жизнь.",
-    "me.p4": "Потому что развитие для меня — это не только профессия. Это образ жизни.",
+    "me.p1": "Я люблю путешествовать, читать, учиться и знакомиться с другими культурами. Мне интересны материнство, отношения, женская идентичность и то, как мы меняемся на разных этапах жизни.",
+    "me.p2": "Я сама продолжаю учиться, меняться и исследовать себя.",
+    "me.p3": "Потому что развитие для меня — не только профессия. Это образ жизни.",
 
     "ct.label": "Контакты",
-    "ct.title": "Давайте <em>познакомимся</em>",
+    "ct.title": "Давайте <em>познакомимся</em>.",
     "ct.p1": "Возможно, наша история начнётся именно здесь.",
-    "ct.p2": "Если вы готовитесь к родам, ищете сопровождение во время беременности, родов или после рождения малыша — напишите мне. Мы познакомимся и поймём, какой формат поддержки нужен именно вам.",
-    "ct.btn": "Записаться",
+    "ct.p2": "Если вы готовитесь к родам, ищете поддержку во время беременности, сопровождение в родах или помощь в первые недели после рождения малыша — напишите мне.",
+    "ct.btn": "Написать",
     "footer.city": "Ташкент, Узбекистан"
   },
 
   uz: {
+    "about.note": "Men uchun ayolning qulayligi, xavfsizligi va maxfiyligi hammasidan ustun!",
+    "ct.p3": "Biz tanishamiz, aynan siz uchun nima muhimligi haqida gaplashamiz va bir-birimizga mos kelishimizni tushunib olamiz.",
+    "ct.p4": "Hech qanday majburiyatsiz. Bosimsiz. Oddiy tanishuvdan.",
     "rev.more": "To‘liq o‘qish",
     "rev.langNote": "Fikrlar asl tilida — rus tilida keltirilgan.",
     "edu.b1.t": "Oliy ma’lumot",
@@ -240,7 +244,6 @@ const I18N = {
 
     "rev.label": "Fikrlar",
     "rev.title": "Men yonida bo‘lgan ayollarning <em>so‘zlari</em>",
-    "rev.video": "Video fikrlar",
     "rev.btn": "Barcha hikoyalar va fikrlar",
 
     "courses.label": "Kurslar • Uchrashuvlar • Loyihalar",
@@ -267,23 +270,25 @@ const I18N = {
     "ph.e1": "Men ayol uchun nima<br>«to‘g‘ri» ekanini hal qilmoqchi emasman.",
     "ph.e2": "Men unga o‘z ovozini<br>eshitishga yordam bermoqchiman.",
 
-    "me.label": "Va men haqimda biroz",
+    "me.label": "Men haqimda biroz",
     "me.title": "Men kasbimdan ko‘ra kengroqman.",
     "me.roles": "Men onaman. Rafiqaman. Ayolman.",
-    "me.p1": "Sayohat qilishni, kitob o‘qishni, o‘rganishni, boshqa madaniyatlar bilan tanishishni va dunyoqarashimni doimo kengaytirishni yaxshi ko‘raman.",
-    "me.p2": "Meni onalik, munosabatlar, ayol identikligi, shaxsiy chegaralar va hayotning turli bosqichlarida qanday o‘zgarishimiz qiziqtiradi.",
-    "me.p3": "Men o‘zim ham o‘zimni kashf etishda, o‘rganishda, xato qilishda, o‘zgarishda va ba’zan — shunchaki hayotni yashashni o‘rganishda davom etaman.",
-    "me.p4": "Chunki men uchun rivojlanish — faqat kasb emas. Bu turmush tarzi.",
+    "me.p1": "Sayohat qilishni, kitob o‘qishni, o‘rganishni va boshqa madaniyatlar bilan tanishishni yaxshi ko‘raman. Meni onalik, munosabatlar, ayol identikligi va hayotning turli bosqichlarida qanday o‘zgarishimiz qiziqtiradi.",
+    "me.p2": "Men o‘zim ham o‘rganishda, o‘zgarishda va o‘zimni kashf etishda davom etaman.",
+    "me.p3": "Chunki men uchun rivojlanish — faqat kasb emas. Bu turmush tarzi.",
 
     "ct.label": "Aloqa",
-    "ct.title": "Keling, <em>tanishamiz</em>",
+    "ct.title": "Keling, <em>tanishamiz</em>.",
     "ct.p1": "Ehtimol, bizning hikoyamiz aynan shu yerda boshlanar.",
-    "ct.p2": "Agar siz tug‘ruqqa tayyorlanayotgan bo‘lsangiz, homiladorlik, tug‘ruq yoki chaqaloq tug‘ilgandan keyingi davrda hamrohlik izlayotgan bo‘lsangiz — menga yozing. Biz tanishamiz va aynan sizga qanday qo‘llab-quvvatlash formati kerakligini birga aniqlaymiz.",
-    "ct.btn": "Yozilish",
+    "ct.p2": "Agar siz tug‘ruqqa tayyorlanayotgan bo‘lsangiz, homiladorlik davrida qo‘llab-quvvatlash, tug‘ruqda hamrohlik yoki chaqaloq tug‘ilgandan keyingi ilk haftalarda yordam izlayotgan bo‘lsangiz — menga yozing.",
+    "ct.btn": "Yozish",
     "footer.city": "Toshkent, O‘zbekiston"
   },
 
   en: {
+    "about.note": "For me, a woman’s comfort, safety and confidentiality come above all else!",
+    "ct.p3": "We’ll get to know each other, talk about what matters to you, and see whether we’re the right fit.",
+    "ct.p4": "No obligations. No pressure. Just a simple first conversation.",
     "rev.more": "Read the full review",
     "rev.langNote": "Reviews are shown in their original language (Russian).",
     "edu.b1.t": "Higher education",
@@ -381,7 +386,6 @@ const I18N = {
 
     "rev.label": "Stories",
     "rev.title": "In the words of women I’ve <em>walked beside</em>",
-    "rev.video": "Video stories",
     "rev.btn": "All stories and reviews",
 
     "courses.label": "Courses • Meetings • Projects",
@@ -408,19 +412,18 @@ const I18N = {
     "ph.e1": "I don’t want to decide for a woman<br>what is “right” for her.",
     "ph.e2": "I want to help her hear<br>her own voice.",
 
-    "me.label": "A little more about me",
+    "me.label": "A little about me",
     "me.title": "I am more than my profession.",
     "me.roles": "A mother. A wife. A woman.",
-    "me.p1": "I love to travel, read, learn, discover other cultures and keep widening the way I see the world.",
-    "me.p2": "I’m interested in motherhood, relationships, female identity, personal boundaries and how we change through the different stages of life.",
-    "me.p3": "I keep exploring myself, learning, making mistakes, changing — and sometimes simply learning to live life.",
-    "me.p4": "Because for me, growth isn’t only a profession. It’s a way of life.",
+    "me.p1": "I love to travel, read, learn and discover other cultures. I’m interested in motherhood, relationships, female identity and how we change through the different stages of life.",
+    "me.p2": "I keep learning, changing and exploring myself.",
+    "me.p3": "Because for me, growth isn’t only a profession. It’s a way of life.",
 
     "ct.label": "Contact",
-    "ct.title": "Let’s <em>meet</em>",
+    "ct.title": "Let’s <em>meet</em>.",
     "ct.p1": "Perhaps our story begins right here.",
-    "ct.p2": "If you are preparing for birth or looking for support during pregnancy, birth or after your baby arrives — write to me. We’ll get to know each other and find the kind of support that is right for you.",
-    "ct.btn": "Get in touch",
+    "ct.p2": "If you are preparing for birth, looking for support during pregnancy, a doula for your birth, or help in the first weeks after your baby arrives — write to me.",
+    "ct.btn": "Write to me",
     "footer.city": "Tashkent, Uzbekistan"
   }
 };

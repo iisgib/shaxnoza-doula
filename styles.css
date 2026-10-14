@@ -193,7 +193,14 @@ h1, h2, h3, h4 { margin: 0; font-weight: 400; }
 
 /* ---------- About ---------- */
 .about { display: grid; grid-template-columns: .85fr 1.15fr; gap: clamp(40px, 7vw, 112px); align-items: center; }
-.about__photo { margin: 0; }
+.about__photo { margin: 0; position: relative; }
+.handnote {
+  position: absolute; right: -28px; bottom: -36px; max-width: 290px;
+  padding: 18px 22px;
+  background: var(--milk); box-shadow: 0 14px 30px -18px rgba(46,33,27,.45);
+  font-family: "Caveat", cursive; font-weight: 500; font-size: 27px; line-height: 1.15;
+  color: var(--olive-deep); transform: rotate(-3deg);
+}
 .about__photo img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: 55% 30%; }
 .about__body > p:not(.lead):not(.label) { color: var(--espresso-soft); }
 
@@ -325,12 +332,6 @@ h1, h2, h3, h4 { margin: 0; font-weight: 400; }
 .review-dialog { width: min(92vw, 760px); }
 .review-dialog__text p { color: var(--espresso-soft); font-size: 16px; }
 .review-dialog__text hr { border: 0; border-top: 1px solid var(--line); margin: 1.6em 0; }
-.videos { margin-bottom: 48px; }
-.videos__row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-.video { aspect-ratio: 9 / 14; text-decoration: none; }
-.play { width: 64px; height: 64px; border-radius: 50%; border: 1px solid var(--espresso); position: relative; transition: background .3s; }
-.play::after { content: ""; position: absolute; left: 26px; top: 21px; border-left: 15px solid var(--espresso); border-top: 11px solid transparent; border-bottom: 11px solid transparent; }
-.video:hover .play { background: var(--milk); }
 
 /* ---------- Courses ---------- */
 .course {
@@ -364,6 +365,7 @@ h1, h2, h3, h4 { margin: 0; font-weight: 400; }
 .contact__inner { max-width: 860px; }
 .contact .lead { margin: 0 auto 1em; max-width: 30ch; }
 .contact p:not(.lead):not(.label) { color: var(--espresso-soft); max-width: 56ch; margin-left: auto; margin-right: auto; }
+.contact p.contact__promise:not(.lead):not(.label) { font-family: var(--serif); font-style: italic; font-size: clamp(22px, 2.2vw, 27px); color: var(--olive); margin-top: 1.4em; }
 .contact .btn { margin-top: 1.6em; }
 .socials { margin-top: 40px; display: flex; justify-content: center; gap: 18px; font-size: 13px; letter-spacing: .16em; text-transform: uppercase; }
 .socials a { text-decoration: none; }
@@ -413,6 +415,8 @@ h1, h2, h3, h4 { margin: 0; font-weight: 400; }
 
   .split, .about, .qual { grid-template-columns: 1fr; }
   .about__photo { max-width: 460px; }
+  .handnote { right: 12px; bottom: -28px; max-width: 78%; font-size: 24px; }
+  .about { row-gap: 64px; }
   .split { gap: 0; }
   .stats__grid { grid-template-columns: 1fr 1fr; row-gap: 48px; }
   .stat:nth-child(2) { border: 0; margin-right: 0; }
@@ -436,9 +440,6 @@ h1, h2, h3, h4 { margin: 0; font-weight: 400; }
   .course .btn { justify-self: start; }
   .svc { grid-template-columns: 44px 1fr; gap: 12px; padding: 24px 0; }
   .svc__more { grid-column: 2; }
-  .videos__row { grid-template-columns: repeat(3, 1fr); gap: 8px; }
-  .play { width: 44px; height: 44px; }
-  .play::after { left: 17px; top: 13px; border-left-width: 12px; border-top-width: 9px; border-bottom-width: 9px; }
   .hero__buttons .btn { width: 100%; }
   .btn { white-space: normal; text-align: center; }
   .footer__right { text-align: left; }

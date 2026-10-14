@@ -1,9 +1,6 @@
-/* ================= CONTACTS =================
-   Fill in WhatsApp (digits only, e.g. "998901234567") and Telegram username.
-   While empty, those links fall back to Instagram Direct. */
+/* ================= CONTACTS ================= */
 const CONTACTS = {
   instagram: "shaxnoz_rashidovna_doula",
-  whatsapp: "",
   telegram: "shaxnoza_doula"
 };
 
@@ -65,7 +62,6 @@ function contactUrl(kind) {
   const ig = `https://www.instagram.com/${CONTACTS.instagram}/`;
   const dm = `https://ig.me/m/${CONTACTS.instagram}`;
   if (kind === "instagram") return ig;
-  if (kind === "whatsapp") return CONTACTS.whatsapp ? `https://wa.me/${CONTACTS.whatsapp}` : dm;
   if (kind === "telegram") return CONTACTS.telegram ? `https://t.me/${CONTACTS.telegram}` : dm;
   return dm;
 }
