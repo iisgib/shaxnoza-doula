@@ -36,7 +36,12 @@ const CERTS = {
     {
       title: { ru: "Диплом «Professional doula»", uz: "«Professional doula» diplomi", en: "Diploma “Professional Doula”" },
       meta: { ru: "Open European Academy of Economics & Politics, Прага • 2024", uz: "Open European Academy of Economics & Politics, Praga • 2024", en: "Open European Academy of Economics & Politics, Prague • 2024" },
-      img: C + "birth-oeaep-diploma-2024.jpg", thumb: C + "birth-oeaep-cover-thumb.jpg"
+      img: C + "birth-oeaep-diploma-2024.jpg", thumb: C + "birth-oeaep-diploma-2024-thumb.jpg"
+    },
+    {
+      title: { ru: "Обложка диплома «Professional doula»", uz: "«Professional doula» diplomi muqovasi", en: "“Professional Doula” diploma cover" },
+      meta: { ru: "Open European Academy of Economics & Politics, Прага • 2024", uz: "Open European Academy of Economics & Politics, Praga • 2024", en: "Open European Academy of Economics & Politics, Prague • 2024" },
+      img: C + "birth-oeaep-cover.jpg", thumb: C + "birth-oeaep-cover-thumb.jpg"
     }
   ],
   postpartum: [

@@ -59,7 +59,7 @@ h1, h2, h3, h4 { margin: 0; font-weight: 400; }
 }
 .h2--big { font-size: clamp(40px, 6vw, 80px); }
 .h2--huge { font-size: clamp(48px, 9vw, 120px); }
-.h2 em, .h3 em { font-style: italic; color: var(--olive); }
+.h2 em, .h3 em { font-style: normal; color: inherit; }
 
 .h3 {
   font-family: var(--serif);

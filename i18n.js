@@ -94,7 +94,6 @@ const I18N = {
 
     "edu.title": "Поддержка — это не только забота. Это ещё и <em>профессиональная ответственность</em>.",
     "edu.p1": "Моя работа основана на профессиональном обучении, практике и постоянном повышении квалификации.",
-    "edu.hint": "Нажмите на документ, чтобы открыть его.",
     "edu.soon": "Документ скоро будет добавлен",
 
     "intl.p1": "Международные конференции дают мне возможность общаться с доулами и специалистами из разных стран, знакомиться с их опытом, изучать современные подходы и расширять собственное профессиональное мышление.",
@@ -236,7 +235,6 @@ const I18N = {
 
     "edu.title": "Qo‘llab-quvvatlash — bu faqat g‘amxo‘rlik emas. Bu, shuningdek, <em>professional mas’uliyat</em>.",
     "edu.p1": "Mening ishim professional ta’lim, amaliyot va doimiy malaka oshirishga asoslangan.",
-    "edu.hint": "Hujjatni ochish uchun ustiga bosing.",
     "edu.soon": "Hujjat tez orada qo‘shiladi",
 
     "intl.p1": "Xalqaro konferensiyalar menga turli mamlakatlardagi doulalar va mutaxassislar bilan muloqot qilish, ularning tajribasi bilan tanishish, zamonaviy yondashuvlarni o‘rganish va o‘z professional tafakkurimni kengaytirish imkonini beradi.",
@@ -378,7 +376,6 @@ const I18N = {
 
     "edu.title": "Support is not only care. It is also <em>professional responsibility</em>.",
     "edu.p1": "My work is grounded in professional training, practice and continuous professional development.",
-    "edu.hint": "Click a document to open it.",
     "edu.soon": "Document coming soon",
 
     "intl.p1": "International conferences let me connect with doulas and specialists from many countries, learn from their experience, study current approaches and broaden my own professional thinking.",
