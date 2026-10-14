@@ -201,7 +201,7 @@ h1, h2, h3, h4 { margin: 0; font-weight: 400; }
   font-family: "Caveat", cursive; font-weight: 500; font-size: 27px; line-height: 1.15;
   color: var(--olive-deep); transform: rotate(-3deg);
 }
-.about__photo img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: 55% 30%; }
+.about__photo img { width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; object-position: 58% 35%; }
 .about__body > p:not(.lead):not(.label) { color: var(--espresso-soft); }
 
 /* ---------- Sections ---------- */
